@@ -1,12 +1,12 @@
 # README
 
-## Ruby on Rails web application to search Github public repos
+## Ruby on Rails web application to search popular Movie titles
 
 ### Setup
 
 Clone repository `git clone git@github.com:vshl/movies-db.git`
 
-cd to project root directory: `cd ../path/to/github-search`
+cd to project root directory: `cd ../path/to/movies-db`
 
 #### Method 1: Docker (Recommended)
 
@@ -16,9 +16,9 @@ cd to project root directory: `cd ../path/to/github-search`
 
     `docker-compose up -d`
 
-3. Rails db migrate to setup the database schema
+3. Optionally run sample RSpec tests
 
-    `docker-compose run web bundle exec rails db:migrate`
+    `docker-compose run web bundle exec rspec`
 
 4. Rails server is up and running at http://localhost:3000
 
@@ -40,12 +40,32 @@ gem install bundler -v 1.17.2
 
     `bundle install`
 
-2. Run Rails migration to setup database schema
-
-    `bundle exec rails db:migrate`
-
-3. Start Rails server
+2. Start Rails server
 
     `bundle exec rails s`
 
+3. Optionally run sample RSpec tests
+
+    `bundle exec rspec`
+
 4. Open web browser at http://localhost:3000
+
+### Usage
+
+Use text box to search for a movie title, e.g: Star Wars, Batman, Superman
+
+### Trade Offs
+
+* I initially thought to have a static page listing a particular movie series,
+  but opted to implement a simple search bar that can list any movies. The
+  process was trivial as the bulk of the work was already implemented and I just
+  had to add a search box to send the input search argument to the controller.
+* The result is a more presentable and real world application that can return
+  meaningful results.
+* The API currently only fetches Movie data to narrow down on the results
+  returned
+* Next steps would involve adding more search parameters that uses more of the
+  API parameters for example:
+  * If the user wants to search only 'TV Shows' or 'Movies'
+  * Return a Title from a particular Year
+* Front-End enhancements to make the web page pretty
