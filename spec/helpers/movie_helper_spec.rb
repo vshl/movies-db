@@ -30,9 +30,9 @@ describe MovieHelper do
 
     it 'response contains movie title' do
       expect(
-        JSON.parse(@omdb.find_by_title.body)['Search'][0]['Title']
-      )
-        .to match(/#{params}/)
+        JSON.parse(@omdb.find_by_title.body)['Search']
+        .find { |movie| movie['Title'] =~ /#{params}/ }
+      ).not_to be_nil
     end
   end
 end
