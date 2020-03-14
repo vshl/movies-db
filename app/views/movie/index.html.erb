@@ -1,1 +1,13 @@
-<h4>Movies DB</h4>
+<p id="notice"><%= notice %></p>
+
+<h1><%= link_to 'Open Movies DB', root_path %></h1>
+
+<%= form_tag(movies_path, method: :get) do %>
+  <%= text_field_tag(:search, params[:search], required: true) %>
+  <%= submit_tag ("Search") %>
+<% end %>
+<p>E.g.: 'Star Wars', 'Batman', 'Superman'</p><br>
+
+<% if movies.present? %>
+  <%= render "title", movies: movies %>
+<% end %>
