@@ -1,11 +1,11 @@
 class MovieController < ApplicationController
   def index
-    @movies = Movie.search(params[:search])
+    @movies = Movie.search(movie_params)
 
     render :index, locals: { movies: @movies }
   end
 
   def movie_params
-    params.require(:movie).permit(:search)
+    params.permit(:search)
   end
 end

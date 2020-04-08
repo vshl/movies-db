@@ -14,7 +14,7 @@ describe MovieHelper do
     end
 
     it 'params matches input' do
-      expect(params).to eq @omdb.params
+      expect(params).to eq @omdb.search
     end
   end
 
