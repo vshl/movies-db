@@ -68,4 +68,20 @@ Use text box to search for a movie title, e.g: Star Wars, Batman, Superman
   API parameters for example:
   * If the user wants to search only 'TV Shows' or 'Movies'
   * Return a Title from a particular Year
+  * Search for an episode of a TV show
 * Front-End enhancements to make the web page pretty
+
+
+### Relevant files
+
+`app/controllers/movie_controller.rb`
+
+`app/models/movie.rb`
+
+`app/helpers/movie_helper.rb`
+
+`spec/helpers/movie_helper_spec.rb`
+
+`app/views/movie/index.html.erb`
+
+`app/views/movie/_title.html.erb`
