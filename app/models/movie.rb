@@ -1,4 +1,4 @@
-class Movie < ApplicationRecord
+class Movie < ActiveRecord::Base
   def self.search(params)
     return unless params[:search]
 
