@@ -1,4 +1,8 @@
-<% movies.each do |movie| %>
+<% movies['Search']
+  .sort_by { |movie| movie['Year'] }
+  .reverse
+  .each do |movie|
+%>
   <ul>
     <li><%= movie['Title'] %><%= ', ' + movie['Year'] %>
   </ul>
