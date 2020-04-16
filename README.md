@@ -76,8 +76,6 @@ Use text box to search for a movie title, e.g: Star Wars, Batman, Superman
 
 `app/controllers/movie_controller.rb`
 
-`app/models/movie.rb`
-
 `app/helpers/movie_helper.rb`
 
 `spec/helpers/movie_helper_spec.rb`
